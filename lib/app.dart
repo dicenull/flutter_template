@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class App extends HookConsumerWidget {
-  const App({Key? key}) : super(key: key);
+  const App({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final appRouter = ref.watch(appRouterProvider);
 
     return MaterialApp.router(
-      routerConfig: appRouter,
+      routerConfig: appRouter.config(),
     );
   }
 }
